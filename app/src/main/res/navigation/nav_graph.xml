@@ -11,6 +11,9 @@
         <action
             android:id="@+id/action_notesFragment_to_addNotesFragment"
             app:destination="@id/addNotesFragment" />
+        <action
+            android:id="@+id/action_notesFragment_to_noteDetailsFragment"
+            app:destination="@id/noteDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/addNotesFragment"
@@ -28,4 +31,12 @@
         android:id="@+id/addTodoFragment"
         android:name="com.yz3ro.noteandto_dolist.ui.fragments.AddTodoFragment"
         android:label="AddTodoFragment" />
+    <fragment
+        android:id="@+id/noteDetailsFragment"
+        android:name="com.yz3ro.noteandto_dolist.ui.fragments.NoteDetailsFragment"
+        android:label="NoteDetailsFragment" >
+        <argument
+            android:name="note"
+            app:argType="com.yz3ro.noteandto_dolist.data.entity.Notes" />
+    </fragment>
 </navigation>

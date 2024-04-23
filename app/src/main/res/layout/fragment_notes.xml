@@ -7,6 +7,9 @@
         <variable
             name="fragmentNotes"
             type="com.yz3ro.noteandto_dolist.ui.fragments.NotesFragment" />
+        <variable
+            name="noteAdapter"
+            type="com.yz3ro.noteandto_dolist.adapters.NotesAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,6 +33,8 @@
             android:id="@+id/recyclerView"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:adapter="@{noteAdapter}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

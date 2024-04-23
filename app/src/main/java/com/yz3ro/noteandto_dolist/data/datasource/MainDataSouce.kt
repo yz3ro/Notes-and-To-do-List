@@ -16,6 +16,14 @@ class MainDataSouce (var ndao : NoteDao,var tdao : TodoDao) {
         val newNote = Notes(0,note,note_title)
         ndao.addNote(newNote)
     }
+    suspend fun deleteNote(note_id:Int){
+        val deletedNote = Notes(note_id,"","")
+        ndao.deleteNote(deletedNote)
+    }
+    suspend fun updateNote(note_id:Int,note_title: String,note: String){
+        val updatedNote = Notes(note_id,note_title,note)
+        ndao.updateNote(updatedNote)
+    }
 
     suspend fun getTodo() : List<Todo> =
         withContext(Dispatchers.IO){

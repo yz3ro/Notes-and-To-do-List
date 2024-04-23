@@ -20,4 +20,10 @@ class NotesViewModel @Inject constructor(var mp : MainRepository): ViewModel() {
             noteList.value = mp.getNotes()
         }
     }
+    fun deleteNote(note_id:Int){
+        CoroutineScope(Dispatchers.Main).launch {
+            mp.deleteNote(note_id)
+            getNote()
+        }
+    }
 }

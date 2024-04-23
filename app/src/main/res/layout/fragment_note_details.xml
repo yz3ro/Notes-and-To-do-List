@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="noteDetailsFragment"
+            type="com.yz3ro.noteandto_dolist.ui.fragments.NoteDetailsFragment" />
+        <variable
+            name="noteObject"
+            type="com.yz3ro.noteandto_dolist.data.entity.Notes" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.NoteDetailsFragment" >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout2"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/noteDetailsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:hint="Note Title"
+                android:text="@{noteObject.note_title}"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout3"
+            android:layout_width="270dp"
+            android:layout_height="377dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/noteDetailsNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:hint="NoteDetails"
+                android:text="@{noteObject.note}"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabEditNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:onClick="@{() -> noteDetailsFragment.noteEdit()}"
+            android:clickable="true"
+            android:src="@drawable/edit_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="TODO" />
+
+        <Button
+            android:id="@+id/btnNoteUpdate"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="64dp"
+            android:text="Update"
+            android:visibility="invisible"
+            android:onClick="@{() -> noteDetailsFragment.noteUpdate(noteObject.note_id,noteDetailsTitle.getText().toString(),noteDetailsNote.getText().toString())}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import com.yz3ro.noteandto_dolist.R
+import com.yz3ro.noteandto_dolist.adapters.NotesAdapter
 import com.yz3ro.noteandto_dolist.databinding.FragmentNotesBinding
 import com.yz3ro.noteandto_dolist.room.DataBase
 import com.yz3ro.noteandto_dolist.ui.viewmodels.NotesViewModel
@@ -27,7 +28,8 @@ class NotesFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_notes, container, false)
         binding.fragmentNotes = this
         viewModel.noteList.observe(viewLifecycleOwner){ notes ->
-
+            val noteAdapter =NotesAdapter(requireContext(),notes,viewModel)
+            binding.noteAdapter = noteAdapter
         }
         return binding.root
     }
