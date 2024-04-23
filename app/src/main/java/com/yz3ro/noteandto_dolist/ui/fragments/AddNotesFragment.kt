@@ -17,12 +17,13 @@ import dagger.hilt.android.AndroidEntryPoint
 class AddNotesFragment : Fragment() {
     private lateinit var binding : FragmentAddNotesBinding
     private val viewModel : AddNotesViewModel by viewModels()
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding= DataBindingUtil.inflate(inflater,R.layout.fragment_add_notes, container, false)
         binding.fragmentAddNotes = this
         return binding.root
     }
-    fun AddNote(){
-
+    fun addNote(note_title : String, note : String){
+        viewModel.addNote(note_title,note)
     }
 }

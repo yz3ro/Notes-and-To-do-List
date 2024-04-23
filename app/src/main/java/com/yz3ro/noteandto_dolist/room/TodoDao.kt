@@ -11,13 +11,13 @@ import com.yz3ro.noteandto_dolist.data.entity.Todo
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface NoteDao {
-    @Query("SELECT * FROM notes")
-    suspend fun allNotes() : List<Notes>
+interface TodoDao {
+    @Query("SELECT * FROM todo")
+    suspend fun allTodo() : List<Todo>
     @Insert
-    suspend fun addNote(note : Notes)
+    suspend fun addTodo(todo : Todo)
     @Update
-    suspend fun updateNote(note : Notes)
+    suspend fun updateTodo(todo : Todo)
     @Delete
-    suspend fun deleteNote(note : Notes)
+    suspend fun deleteTodo(todo : Todo)
 }

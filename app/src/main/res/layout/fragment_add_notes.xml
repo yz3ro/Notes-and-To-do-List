@@ -36,6 +36,7 @@
             app:layout_constraintTop_toBottomOf="@+id/addNoteToolBar">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/noteTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter Note Title" />
@@ -50,6 +51,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/note"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Note" />
@@ -61,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="64dp"
             android:text="Add"
-            android:onClick="@{() -> fragmentAddNotes.AddNote()}"
+            android:onClick="@{() -> fragmentAddNotes.addNote(noteTitle.getText().toString(),note.getText().toString())}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
