@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/notesFragment">
+
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="com.yz3ro.noteandto_dolist.ui.fragments.NotesFragment"
+        android:label="NotesFragment" >
+        <action
+            android:id="@+id/action_notesFragment_to_addNotesFragment"
+            app:destination="@id/addNotesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNotesFragment"
+        android:name="com.yz3ro.noteandto_dolist.ui.fragments.AddNotesFragment"
+        android:label="AddNotesFragment" />
+    <fragment
+        android:id="@+id/todoListFragment"
+        android:name="com.yz3ro.noteandto_dolist.ui.fragments.TodoListFragment"
+        android:label="TodoListFragment" >
+        <action
+            android:id="@+id/action_todoListFragment_to_addTodoFragment"
+            app:destination="@id/addTodoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTodoFragment"
+        android:name="com.yz3ro.noteandto_dolist.ui.fragments.AddTodoFragment"
+        android:label="AddTodoFragment" />
+</navigation>
