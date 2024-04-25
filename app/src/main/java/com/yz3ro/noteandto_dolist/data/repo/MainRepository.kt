@@ -1,10 +1,10 @@
 package com.yz3ro.noteandto_dolist.data.repo
 
-import com.yz3ro.noteandto_dolist.data.datasource.MainDataSouce
+import com.yz3ro.noteandto_dolist.data.datasource.MainDataSource
 import com.yz3ro.noteandto_dolist.data.entity.Notes
 import com.yz3ro.noteandto_dolist.data.entity.Todo
 
-class MainRepository(var mds : MainDataSouce) {
+class MainRepository(var mds : MainDataSource) {
 
     suspend fun getNotes() : List<Notes> = mds.getNotes()
 
@@ -16,5 +16,10 @@ class MainRepository(var mds : MainDataSouce) {
 
     suspend fun getTodo() : List<Todo> = mds.getTodo()
 
-    suspend fun addTodo(todo_title :String,todo_date:String,todo:String) = mds.addTodo(todo_title,todo_date,todo)
+    suspend fun addTodo(todo_date:String,todo:String) = mds.addTodo(todo_date,todo)
+
+    suspend fun deleteTodo(todo_id:Int) = mds.deleteTodo(todo_id)
+
+    suspend fun updateTodo(todo_id:Int,todo_date: String,todo : String) = mds.updateTodo(todo_id,todo_date,todo)
+
 }

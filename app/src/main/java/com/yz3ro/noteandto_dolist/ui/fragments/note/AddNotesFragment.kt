@@ -1,4 +1,4 @@
-package com.yz3ro.noteandto_dolist.ui.fragments
+package com.yz3ro.noteandto_dolist.ui.fragments.note
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,8 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import com.yz3ro.noteandto_dolist.R
 import com.yz3ro.noteandto_dolist.databinding.FragmentAddNotesBinding
-import com.yz3ro.noteandto_dolist.ui.viewmodels.AddNotesViewModel
-import com.yz3ro.noteandto_dolist.ui.viewmodels.TodoListViewModel
+import com.yz3ro.noteandto_dolist.ui.viewmodels.note.AddNotesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

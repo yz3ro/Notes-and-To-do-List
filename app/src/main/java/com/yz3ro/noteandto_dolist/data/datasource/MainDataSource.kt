@@ -7,7 +7,7 @@ import com.yz3ro.noteandto_dolist.room.TodoDao
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class MainDataSouce (var ndao : NoteDao,var tdao : TodoDao) {
+class MainDataSource (var ndao : NoteDao,var tdao : TodoDao) {
     suspend fun getNotes() : List<Notes> =
         withContext(Dispatchers.IO){
             return@withContext ndao.allNotes()
@@ -29,9 +29,18 @@ class MainDataSouce (var ndao : NoteDao,var tdao : TodoDao) {
         withContext(Dispatchers.IO){
             return@withContext tdao.allTodo()
         }
-    suspend fun addTodo(todo_title :String,todo_date:String,todo:String) {
-       val newTodo = Todo(1,todo_title,todo_date,todo,1)
+    suspend fun addTodo(todo_date:String,todo:String) {
+        val newTodo = Todo(0,todo_date,todo)
         tdao.addTodo(newTodo)
+    }
+
+    suspend fun deleteTodo(todo_id:Int){
+        val deletedTodo = Todo(todo_id,"","")
+        tdao.deleteTodo(deletedTodo)
+    }
+    suspend fun updateTodo(todo_id:Int,todo_date: String,todo : String){
+        val updateTodo = Todo(todo_id,todo_date,todo)
+        tdao.updateTodo(updateTodo)
     }
 
 }

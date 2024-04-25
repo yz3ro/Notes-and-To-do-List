@@ -1,4 +1,4 @@
-package com.yz3ro.noteandto_dolist.ui.viewmodels
+package com.yz3ro.noteandto_dolist.ui.viewmodels.note
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

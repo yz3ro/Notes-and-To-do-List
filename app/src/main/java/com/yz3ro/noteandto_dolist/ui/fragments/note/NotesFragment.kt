@@ -1,7 +1,6 @@
-package com.yz3ro.noteandto_dolist.ui.fragments
+package com.yz3ro.noteandto_dolist.ui.fragments.note
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,9 +11,7 @@ import androidx.navigation.Navigation
 import com.yz3ro.noteandto_dolist.R
 import com.yz3ro.noteandto_dolist.adapters.NotesAdapter
 import com.yz3ro.noteandto_dolist.databinding.FragmentNotesBinding
-import com.yz3ro.noteandto_dolist.room.DataBase
-import com.yz3ro.noteandto_dolist.ui.viewmodels.NotesViewModel
-import com.yz3ro.noteandto_dolist.ui.viewmodels.TodoListViewModel
+import com.yz3ro.noteandto_dolist.ui.viewmodels.note.NotesViewModel
 import com.yz3ro.noteandto_dolist.util.navigate
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -1,4 +1,4 @@
-package com.yz3ro.noteandto_dolist.ui.viewmodels
+package com.yz3ro.noteandto_dolist.ui.viewmodels.todo
 
 import androidx.lifecycle.ViewModel
 import com.yz3ro.noteandto_dolist.data.repo.MainRepository
@@ -9,10 +9,10 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AddNotesViewModel @Inject constructor(var mp : MainRepository): ViewModel() {
-     fun addNote(note_title : String,note : String) {
-        CoroutineScope(Dispatchers.Main).launch{
-            mp.addNote(note_title,note)
-        }
+class AddTodoViewModel @Inject constructor(var mp : MainRepository): ViewModel() {
+     fun addTodo(todo_date:String,todo:String){
+         CoroutineScope(Dispatchers.Main).launch {
+             mp.addTodo(todo_date,todo)
+         }
      }
 }

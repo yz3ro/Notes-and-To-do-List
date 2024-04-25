@@ -5,20 +5,32 @@
 
     <data>
         <variable
-            name="noteDetailsFragment"
-            type="com.yz3ro.noteandto_dolist.ui.fragments.note.NoteDetailsFragment" />
+            name="todoDetailsFragment"
+            type="com.yz3ro.noteandto_dolist.ui.fragments.todo.TodoDetailsFragment" />
         <variable
-            name="noteObject"
-            type="com.yz3ro.noteandto_dolist.data.entity.Notes" />
+            name="todoObject"
+            type="com.yz3ro.noteandto_dolist.data.entity.Todo" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragments.note.NoteDetailsFragment" >
+        tools:context=".ui.fragments.todo.TodoDetailsFragment">
+
+        <Button
+            android:id="@+id/btnTodoUpdate"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="64dp"
+            android:onClick="@{()-> todoDetailsFragment.todoUpdate(todoObject.todo_id,txtDate.getText().toString(),txtTodo.getText().toString())}"
+            android:text="Update"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/todoDetailsToolBar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="?attr/colorPrimary"
@@ -29,67 +41,51 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout2"
+            android:id="@+id/textInputLayout6"
             android:layout_width="270dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="64dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+            app:layout_constraintTop_toBottomOf="@+id/todoDetailsToolBar">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/noteDetailsTitle"
+                android:id="@+id/txtTodo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:enabled="false"
-                android:hint="Note Title"
-                android:text="@{noteObject.note_title}"
-                android:textColor="@color/black" />
+                android:hint="To-Do"
+                android:text="@{todoObject.todo}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout3"
             android:layout_width="270dp"
-            android:layout_height="377dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout6">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/noteDetailsNote"
+                android:id="@+id/txtDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:enabled="false"
-                android:hint="NoteDetails"
-                android:text="@{noteObject.note}"
-                android:textColor="@color/black" />
+                android:hint="Date"
+                android:text="@{todoObject.todo_date}" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabEditNote"
+            android:id="@+id/fabEditTodo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:onClick="@{() -> noteDetailsFragment.noteEdit()}"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
             android:clickable="true"
+            android:onClick="@{ () -> todoDetailsFragment.todoEdit()}"
             android:src="@drawable/edit_icon"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:contentDescription="TODO" />
-
-        <Button
-            android:id="@+id/btnNoteUpdate"
-            android:layout_width="270dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="64dp"
-            android:text="Update"
-            android:visibility="invisible"
-            android:onClick="@{() -> noteDetailsFragment.noteUpdate(noteObject.note_id,noteDetailsTitle.getText().toString(),noteDetailsNote.getText().toString())}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

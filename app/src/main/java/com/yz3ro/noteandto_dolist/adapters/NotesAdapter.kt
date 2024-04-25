@@ -10,8 +10,8 @@ import com.google.android.material.snackbar.Snackbar
 import com.yz3ro.noteandto_dolist.R
 import com.yz3ro.noteandto_dolist.data.entity.Notes
 import com.yz3ro.noteandto_dolist.databinding.NoteItemBinding
-import com.yz3ro.noteandto_dolist.ui.fragments.NotesFragmentDirections
-import com.yz3ro.noteandto_dolist.ui.viewmodels.NotesViewModel
+import com.yz3ro.noteandto_dolist.ui.fragments.note.NotesFragmentDirections
+import com.yz3ro.noteandto_dolist.ui.viewmodels.note.NotesViewModel
 import com.yz3ro.noteandto_dolist.util.direction
 
 class NotesAdapter (var mContext : Context,var noteList :List<Notes>, var viewModel: NotesViewModel) : RecyclerView.Adapter<NotesAdapter.MyViewHolder>() {

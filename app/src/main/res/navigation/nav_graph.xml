@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/notesFragment"
-        android:name="com.yz3ro.noteandto_dolist.ui.fragments.NotesFragment"
+        android:name="com.yz3ro.noteandto_dolist.ui.fragments.note.NotesFragment"
         android:label="NotesFragment" >
         <action
             android:id="@+id/action_notesFragment_to_addNotesFragment"
@@ -17,26 +17,37 @@
     </fragment>
     <fragment
         android:id="@+id/addNotesFragment"
-        android:name="com.yz3ro.noteandto_dolist.ui.fragments.AddNotesFragment"
+        android:name="com.yz3ro.noteandto_dolist.ui.fragments.note.AddNotesFragment"
         android:label="AddNotesFragment" />
     <fragment
         android:id="@+id/todoListFragment"
-        android:name="com.yz3ro.noteandto_dolist.ui.fragments.TodoListFragment"
+        android:name="com.yz3ro.noteandto_dolist.ui.fragments.todo.TodoListFragment"
         android:label="TodoListFragment" >
         <action
             android:id="@+id/action_todoListFragment_to_addTodoFragment"
             app:destination="@id/addTodoFragment" />
+        <action
+            android:id="@+id/action_todoListFragment_to_todoDetailsFragment"
+            app:destination="@id/todoDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/addTodoFragment"
-        android:name="com.yz3ro.noteandto_dolist.ui.fragments.AddTodoFragment"
+        android:name="com.yz3ro.noteandto_dolist.ui.fragments.todo.AddTodoFragment"
         android:label="AddTodoFragment" />
     <fragment
         android:id="@+id/noteDetailsFragment"
-        android:name="com.yz3ro.noteandto_dolist.ui.fragments.NoteDetailsFragment"
+        android:name="com.yz3ro.noteandto_dolist.ui.fragments.note.NoteDetailsFragment"
         android:label="NoteDetailsFragment" >
         <argument
             android:name="note"
             app:argType="com.yz3ro.noteandto_dolist.data.entity.Notes" />
+    </fragment>
+    <fragment
+        android:id="@+id/todoDetailsFragment"
+        android:name="com.yz3ro.noteandto_dolist.ui.fragments.todo.TodoDetailsFragment"
+        android:label="TodoDetailsFragment" >
+        <argument
+            android:name="todo"
+            app:argType="com.yz3ro.noteandto_dolist.data.entity.Todo" />
     </fragment>
 </navigation>

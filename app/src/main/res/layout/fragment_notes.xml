@@ -6,7 +6,7 @@
     <data>
         <variable
             name="fragmentNotes"
-            type="com.yz3ro.noteandto_dolist.ui.fragments.NotesFragment" />
+            type="com.yz3ro.noteandto_dolist.ui.fragments.note.NotesFragment" />
         <variable
             name="noteAdapter"
             type="com.yz3ro.noteandto_dolist.adapters.NotesAdapter" />
@@ -15,7 +15,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragments.NotesFragment" >
+        tools:context=".ui.fragments.note.NotesFragment" >
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/notesToolBar"

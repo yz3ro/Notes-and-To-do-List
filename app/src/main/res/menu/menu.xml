@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/notesFragment"
+        android:icon="@drawable/writing"
+        android:title="Notes" />
+    <item
+        android:id="@+id/todoListFragment"
+        android:icon="@drawable/to_do_list"
+        android:title="To-Do List" />
+</menu>
